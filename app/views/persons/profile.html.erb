@@ -1,2 +1,15 @@
-<h1>Persons#profile</h1>
-<p>Find me in app/views/persons/profile.html.erb</p>
+<div class="center hero-unit">
+  <h1>Добро пожаловать! Это прототип персонального сайта для группы студентов.</h1>
+
+  <h2>
+    Сайт предназначен для размещения новостей и их обсуждения между студентами.
+  </h2>
+
+  <% if user_signed_in? %>
+    <span>Здравствуйте, <%= @user.name %></span>
+    <%= link_to 'Выйти', destroy_user_session_path, :method => :delete %>
+  <% else %>
+    <%= link_to 'Войти', new_user_session_path %> или <%= link_to 'Зарегистрироваться', new_user_registration_path %>
+  <% end %>
+  
+</div>
