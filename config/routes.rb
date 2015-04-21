@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :articles
+
   devise_for :users
   match '/profile',    to: 'persons#profile',    via: 'get', as: 'user_root'
 
