@@ -1,15 +1,25 @@
 <div class="center hero-unit">
-  <h1>Добро пожаловать! Это прототип персонального сайта для группы студентов.</h1>
+  <h1>Личная страница</h1>
 
-  <h2>
-    Сайт предназначен для размещения новостей и их обсуждения между студентами.
-  </h2>
+  <center><%= link_to 'New Article', new_article_path %></center>
 
-  <% if user_signed_in? %>
-    <span>Здравствуйте, <%= @user.name %></span>
-    <%= link_to 'Выйти', destroy_user_session_path, :method => :delete %>
-  <% else %>
-    <%= link_to 'Войти', new_user_session_path %> или <%= link_to 'Зарегистрироваться', new_user_registration_path %>
+  <% @articles.each do |article| %>
+    <% if current_user.id == article.user_id %>
+      <div class="con">
+        <h2><%= article.user_name %></h2>
+        <h3><%= article.title %></h3>
+        <table>
+          <tr>
+            <td colspan="3"><%= article.content %></td>
+          </tr>
+          <tr>
+            <td><center><%= link_to 'Show', article %></center></td>
+            <td><center><%= link_to 'Edit', edit_article_path(article) %></center></td>
+            <td><center><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></center></td>
+          </tr>
+        </table>    
+      </div>
+    <% end %>
   <% end %>
   
 </div>

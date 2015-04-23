@@ -6,7 +6,13 @@
         <ul class="nav pull-right">
           <%= link_to "О нас",    about_path, id: "pagelinks" %>
           <%= link_to "Новости",    articles_path, id: "pagelinks" %>
-          <%= link_to "Link3", '#', id: "pagelinks" %>
+          <% if user_signed_in? %>
+            <%= link_to current_user.name + " " + current_user.surname, user_root_path, id: "logo1" %>
+            <%= link_to 'Выйти', destroy_user_session_path, id: "logo1", :method => :delete %>
+          <% else %>
+            <%= link_to 'Войти ', new_user_session_path, id: "logo1" %>
+            <%= link_to ' Зарегистрироваться', new_user_registration_path, id: "logo1" %>
+          <% end %>
         </ul>
       </nav>
     </div>
