@@ -1,6 +1,11 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
 
+  def username
+    @user = User.find(params[:user_id])
+    @user. name
+  end
+
   # GET /articles
   # GET /articles.json
   def index

@@ -1,28 +1,21 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Новости</h1>
-
-<table border="1" cellpadding="7">
-  <tbody>
-    <% @articles.each do |article| %>
-      <tr>
-          <td colspan="3"><%= article.user_id %></td>
-      </tr>
-      <tr>
-          <td colspan="3"><%= article.title %></td>
-      </tr>
-      <tr>
-          <td colspan="3"><%= article.content %></td>
-      </tr>
-      <tr>
-        <td><%= link_to 'Show', article %></td>
-        <td><%= link_to 'Edit', edit_article_path(article) %></td>
-        <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
+<center><%= link_to 'New Article', new_article_path %></center>
+<% @articles.each do |article| %>
+<div class="con">
+  <h2><%= article.username %></h2>
+  <h3><%= article.title %></h3>
+  <table>
+    <tr>
+      <td colspan="3"><%= article.content %></td>
+    </tr>
+    <tr>
+      <td><center><%= link_to 'Show', article %></center></td>
+      <td><center><%= link_to 'Edit', edit_article_path(article) %></center></td>
+      <td><center><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></center></td>
+    </tr>
+  </table>    
+</div>
+<% end %>
 <br>
-
-<%= link_to 'New Article', new_article_path %>

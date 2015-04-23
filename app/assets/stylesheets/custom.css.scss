@@ -117,3 +117,35 @@ footer ul li {
   float: left;
   margin-left: 10px;
 }
+
+/* всякое */
+
+.con {
+  margin: 0 auto;
+  width: 600px;
+  background: white;
+  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.1);
+  -webkit-background-clip: padding-box;
+          background-clip: padding-box;
+  }
+.con h2{
+  text-align: left;
+  margin-bottom: -20px;
+  padding: 10px;
+  background: #000;
+  font-family: Arial;
+  font-size: 1.5em;
+  color: #fff;
+}
+.con h3{
+  padding: 5px;
+  background: #ecede3;
+  font-family: Arial;
+  font-size: 1.2em;
+  color: #000;
+}
+.con td {
+  padding: 20px;
+  font-family: Arial;
+  font-size: 1.1em;
+}
