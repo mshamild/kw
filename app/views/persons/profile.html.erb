@@ -1,6 +1,14 @@
 <div class="center hero-unit">
   <h1>Личная страница</h1>
 
+  <%= form_for @user, :html => {:multipart => true} do |f| %>   
+    <p>
+      <label>My Avatar</label>
+      <%= image_tag(@user.avatar_url) if @user.avatar? %> #загруженая картинка, если присутствует
+      <%= f.file_field :avatar %>
+      <%= f.hidden_field :avatar_cache %> #кешированое изображение
+  <% end %>
+
   <center><%= link_to 'New Article', new_article_path %></center>
 
   <% @articles.each do |article| %>
