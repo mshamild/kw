@@ -27,6 +27,7 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
     @article.user_name = current_user.name
+    @article.user_surname = current_user.surname
     @article.user_id = current_user.id
     respond_to do |format|
       if @article.save
@@ -71,6 +72,6 @@ class ArticlesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def article_params
-      params.require(:article).permit(:title, :content, :user_id, :user_name)
+      params.require(:article).permit(:title, :content, :user_id, :user_name, :user_surname)
     end
 end

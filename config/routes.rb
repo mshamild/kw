@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
 
   resources :images
-
   resources :articles
 
   devise_for :users

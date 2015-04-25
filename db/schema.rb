@@ -20,9 +20,10 @@ ActiveRecord::Schema.define(version: 20150424124103) do
     t.string   "title"
     t.text     "content"
     t.string   "user_name"
+    t.string   "user_surname"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "images", force: :cascade do |t|
