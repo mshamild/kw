@@ -161,7 +161,46 @@ footer ul li {
   color: #000;
 }
 .con td {
+  width: 600px;
   padding: 20px;
   font-family: Arial;
   font-size: 1.1em;
+}
+.phgal{
+  margin: auto;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  width: 300px;
+  height: 270px;
+  padding: 12px;
+  background: white;
+  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.1);
+  -webkit-background-clip: padding-box;
+          background-clip: padding-box;
+  float: left;
+}
+.phgal h2{
+  text-align: left;
+  margin-bottom: -20px;
+  padding: 10px;
+  background: #000;
+  font-family: Arial;
+  font-size: 1.2em;
+  color: #fff;
+}
+.phgal h3{
+  padding: 5px;
+  background: #ecede3;
+  font-family: Arial;
+  font-size: 1.1em;
+  color: #000;
+}
+.phgal td {
+  width: 300px;
+  padding: 2px;
+  font-family: Arial;
+  font-size: 1.0em;
+}
+.clear{
+  clear: left;
 }
