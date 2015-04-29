@@ -1,21 +1,27 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Новости</h1>
+
 <center><%= link_to 'New Article', new_article_path %></center>
 <% @articles.each do |article| %>
-<div class="con">
-  <h2><%= article.user_name %>  <%=article.user_surname %> | <%= article.created_at.strftime("%d %b %Y") %>, <%= article.created_at.strftime("%H:%M") %></h2>
-  <h3><%= article.title %></h3>
-  <table>
-    <tr>
-      <td colspan="3"><%= article.content %></td>
-    </tr>
-    <tr>
-      <td><center><%= link_to 'Show', article %></center></td>
-      <td><center><%= link_to 'Edit', edit_article_path(article) %></center></td>
-      <td><center><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></center></td>
-    </tr>
-  </table>    
+
+<div class="post">
+  <div class="author">
+    <%= article.user_name %>  <%=article.user_surname %>
+    <%= link_to '×', article, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div>
+  <div class="title">
+    <%= article.title %>
+  </div>
+  <div class="content">
+    <%= article.content %>
+  </div>
+  <div class="links">
+    <%= article.created_at.strftime("%d %b %Y") %>, <%= article.created_at.strftime("%H:%M") %>
+    <%= link_to 'Show', article %>
+    <%= link_to 'Edit', edit_article_path(article) %>
+  </div>
 </div>
+<br/>
 <% end %>
 <br>

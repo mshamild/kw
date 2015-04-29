@@ -1,39 +1,43 @@
-<h2>Sign up</h2>
-
+<h1>Регистрация</h1>
+<br />
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
-
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true %>
+  <div class="float">
+    <div class="field">
+      <%= f.label :name, class: "reglab" %><br />
+      <%= f.text_field :name, autofocus: true, class: "reg" %>
+    </div>
+    <hr>
+    <div class="field">
+      <%= f.label :surname, class: "reglab"  %><br />
+      <%= f.text_field :surname, class: "reg"  %>
+    </div>
+    <hr>
+    <div class="field">
+      <%= f.label :email, class: "reglab"  %><br />
+      <%= f.email_field :email, class: "reg"  %>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :surname %><br />
-    <%= f.text_field :surname %>
-  </div>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @validatable %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
+  <div class="marg">
+    <div class="field">
+      <%= f.label :password, class: "reglab1"  %>
+      <% if @validatable %>
+      <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %><br />
+      <%= f.password_field :password, autocomplete: "off", class: "reg1"  %>
+    </div>
+    <hr>
+    <div class="field">
+      <%= f.label :password_confirmation, class: "reglab1"  %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "off", class: "reg1"  %>
+    </div>
+    <hr>
+    <br />
+    <div class="actions">
+      <center><%= f.submit "Sign up", class: "regbtn" %></center>
+    </div>
+    <center><%= render "devise/shared/links" %></center>
+    </div>
+  <div class="clear"></div>
 <% end %>
 
-<%= render "devise/shared/links" %>

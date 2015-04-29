@@ -1,4 +1,5 @@
 class ImagesController < ApplicationController
+  before_filter :authenticate_user!
   before_action :set_image, only: [:show, :edit, :update, :destroy]
 
   # GET /images
@@ -24,7 +25,7 @@ class ImagesController < ApplicationController
   # POST /images
   # POST /images.json
   def create
-    @image = Image.new(image_params)
+    @image = current_user.images.new(image_params)
 
     respond_to do |format|
       if @image.save

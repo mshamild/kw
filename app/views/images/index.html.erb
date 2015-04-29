@@ -1,12 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Images</h1>
-
+<h1>Фотогалерея</h1>
+  <div class="cent">
     <% @images.each do |image| %>
       <div class="phgal">
         <table>
           <tr>
-            <td colspan="3"><%= image_tag image.image_url(:thumb) %></td>
+            <td colspan="3" height="250"><%= image_tag image.image_url(:thumb) %></td>
           </tr>
           <tr>
             <td colspan="3"><%= image.title %></td>
@@ -24,6 +24,7 @@
     <% end %>
     <div class="clear">
     </div>
+  </div>
 <br>
 
 <%= link_to 'New Image', new_image_path %>

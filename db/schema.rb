@@ -28,10 +28,12 @@ ActiveRecord::Schema.define(version: 20150424124103) do
 
   create_table "images", force: :cascade do |t|
     t.string   "title"
+    t.integer  "imageable_id"
+    t.string   "imageable_type"
     t.text     "description"
     t.string   "image"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   create_table "users", force: :cascade do |t|
