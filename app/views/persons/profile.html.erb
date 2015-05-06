@@ -1,27 +1,43 @@
-  <h1>Личная страница</h1>
-  <center><%= link_to 'New Article', new_article_path %></center>
+  <div class="leftborder">
+    <div class="fullname">
+      <%= current_user.name %> <%= current_user.surname %>
+    </div>
+    <div class="avatar">
+    </div>
+    <div class="info">
+      <%= current_user.email %>
 
-  <% @articles.each do |article| %>
-    <% if current_user.id == article.user_id %>
-      <div class="post">
-        <div class="author">
-          <%= article.user_name %>  <%=article.user_surname %>
-          <%= link_to '×', article, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
+  </div>
+  <div class="rightborder">
+    <% @articles.each do |article| %>
+      <% if current_user.id == article.user_id %>
+        <div class="post">
+          <div class="title">
+            <table>
+              <tr>
+                <td width="560px">
+                  <%= article.title %>
+                </td>
+                <td align="right">
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div class="content">
+            <%= article.content %>
+          </div>
+          <div class="links">
+            <%= article.created_at.strftime("%d %b %Y") %>, <%= article.created_at.strftime("%H:%M") %>
+            <%= link_to 'Show', article %>
+              <%= link_to 'Edit', edit_article_path(article) %>
+          </div>
         </div>
-        <div class="title">
-          <%= article.title %>
-        </div>
-        <div class="content">
-          <%= article.content %>
-        </div>
-        <div class="links">
-          <%= article.created_at.strftime("%d %b %Y") %>, <%= article.created_at.strftime("%H:%M") %>
-          <%= link_to 'Show', article %>
-          <%= link_to 'Edit', edit_article_path(article) %>
-        </div>
-      </div>
-    <br/>
+      <br/>
+      <% end %>
     <% end %>
-  <% end %>
+    <h2><%= link_to 'New Article', new_article_path %></h2>
+  </div>
+  <div class="clear"></div>
 <div class="center hero-unit">
 </div>

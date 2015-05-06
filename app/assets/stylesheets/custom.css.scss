@@ -8,6 +8,7 @@ html {
 
 body {
   padding-top: 60px;
+  background-color: #FDFDEC;
 }
 
 section {
@@ -177,6 +178,10 @@ footer ul li {
 .clear{
   clear: left;
 }
+
+.float{
+  float: left;
+}
 .cent{
   margin-left: 100px;
 }
@@ -221,10 +226,6 @@ footer ul li {
   -webkit-background-clip: padding-box;
           background-clip: padding-box;
   border-radius: 5px;
-}
-.float{
-  margin-left: 100px;
-  float: left;
 }
 
 .reg{
@@ -329,8 +330,7 @@ footer ul li {
 }
 
 .author a{
-  position: relative;
-  right: -400px;
+  align: right;
   font-size: 1.2em;
   color: #dfd7ca; 
   text-decoration: none;
@@ -339,6 +339,10 @@ footer ul li {
 .author a:hover{
   color: red; 
   text-decoration: none;
+}
+.author span{
+  font-size: 1.2em;
+  color: #dfd7ca;
 }
 
 .title{
@@ -380,4 +384,62 @@ footer ul li {
   padding: 0 0 0 10px;
   position: relative;
   right: -380px;
+}
+.links span{
+  color: #dfd7ca;
+  padding: 0 0 0 10px;
+  position: relative;
+  right: -380px;
+}
+
+.leftborder{
+  margin-top: 30px;
+  width: 300px;
+  float: left;
+}
+
+.rightborder{
+  margin-top: 30px;
+  margin-left: 350px;
+}
+.fullname{
+  margin-left: 110px;
+  width:260px;
+  font-weight: bold;
+  font-family: Arial;
+  font-size: 1.3em;
+  padding: 10px;
+  background: #FCFDCC;
+  border: 1px solid #dfd7ca;
+  -webkit-background-clip: padding-box;
+          background-clip: padding-box;
+  border-radius: 3px 3px 0 0;
+}
+
+.avatar{
+  margin-left: 110px;
+  margin-top:-1px;
+  width: 260px;
+  height: 260px;
+  padding: 10px;
+  border: 1px solid #dfd7ca;
+  -webkit-background-clip: padding-box;
+          background-clip: padding-box;
+  border-radius: 3px;
+}
+
+.info{
+  margin-left: 110px;
+  margin-top: -1px;
+  background: #FCFDCC;
+  width: 260px;
+  padding: 10px;
+  border: 1px solid #dfd7ca;
+  -webkit-background-clip: padding-box;
+          background-clip: padding-box;
+}
+
+.navbar-inverse{
+  background: #20BA62;
+  border-color: #20BA62;
 }
