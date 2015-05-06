@@ -377,7 +377,7 @@ footer ul li {
   border: 1px solid #dfd7ca;
   -webkit-background-clip: padding-box;
           background-clip: padding-box;
-  border-radius: 0 0 3px 3px;
+  border-radius: 0 0 0px 0px;
 }
 
 .links a{
@@ -439,7 +439,42 @@ footer ul li {
           background-clip: padding-box;
 }
 
-.navbar-inverse{
+/*.navbar-inverse{
   background: #20BA62;
   border-color: #20BA62;
+}*/
+
+.comments{
+  width: 500px;
+  margin-left: 50px;
+  margin-top:-10px;
+  font-family: Arial;
+  font-size: 1.1em;
+  padding: 1px;
+  -webkit-background-clip: padding-box;
+          background-clip: padding-box;
+}
+.comment_autor{
+  padding: 1px;
+  font-family: Arial;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+.comment_autor a{
+  color: #dfd7ca;
+  text-decoration: none;
+}
+.comment_autor a:hover{
+  text-decoration: none;
+  color: red;
+}
+.com_url{
+  font-family: Arial;
+  font-size: 0.8em;
+  text-decoration: none;
+  margin-top:-15px;
+  margin-left: 205px;
+}
+.hr{
+  margin-top:-15px;
 }

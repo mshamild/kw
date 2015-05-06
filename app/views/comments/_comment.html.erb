@@ -1,0 +1,18 @@
+<hr>
+<div class="comment_autor">
+	<table>
+		<tr>
+			<td width="470px">
+		  		<%= comment.user_name %> <%= comment.user_surname %> 
+			</td>
+			<td>
+		  		<%= link_to '×', [comment.article, comment],
+	               method: :delete,
+	               data: { confirm: 'Are you sure?' } %>
+	       	</td>
+        </tr>
+    </table>
+</div>
+<div>
+  <%= comment.content %>
+</div>

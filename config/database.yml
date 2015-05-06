@@ -3,16 +3,16 @@
 defaults_development: &defaults_development
   adapter: postgresql
   encoding: unicode
-  username: kw
+  username: kwfinal
   password: 1
   host: localhost
 
 development:
-  database: kuwo_dev
+  database: kurw_dev
   <<: *defaults_development
 
 test:
-  database: kuwo_test
+  database: kurw_test
   <<: *defaults_development
 
 

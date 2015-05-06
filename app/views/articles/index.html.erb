@@ -2,7 +2,7 @@
 
 <h1>Новости</h1>
 
-<center><%= link_to 'New Article', new_article_path %></center>
+<h2><%= link_to 'New Article', new_article_path %></h2>
 <% @articles.each do |article| %>
 
 <div class="post">
@@ -37,7 +37,15 @@
       <span>Edit</span>
     <% end %>
   </div>
+  <div class="comments">
+    <%= render article.comments %>
+    <hr>
+    <div class="com_url">
+      <%= link_to 'Comment', article %>
+    </div>
+    <div class="hr"><hr></div>
+  </div>
+  <br />
 </div>
-<br/>
 <% end %>
 <br>
