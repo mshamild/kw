@@ -7,8 +7,20 @@
 
 <div class="post">
   <div class="author">
-    <%= article.user_name %>  <%=article.user_surname %>
-    <%= link_to '×', article, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <table>
+      <tr>
+        <td width="560px">
+          <%= article.user_name %>  <%=article.user_surname %>
+        </td>
+        <td align="right">
+          <% if current_user.id == article.user_id %>
+            <%= link_to '×', article, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% else %>
+              <span>×</span>
+          <% end %>
+        </td>
+      </tr>
+    </table>
   </div>
   <div class="title">
     <%= article.title %>
@@ -19,7 +31,11 @@
   <div class="links">
     <%= article.created_at.strftime("%d %b %Y") %>, <%= article.created_at.strftime("%H:%M") %>
     <%= link_to 'Show', article %>
-    <%= link_to 'Edit', edit_article_path(article) %>
+    <% if current_user.id == article.user_id %>
+      <%= link_to 'Edit', edit_article_path(article) %>
+    <% else %>
+      <span>Edit</span>
+    <% end %>
   </div>
 </div>
 <br/>
