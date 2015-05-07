@@ -1,43 +1,67 @@
   <div class="leftborder">
-    <div class="fullname">
-      <%= current_user.name %> <%= current_user.surname %>
-    </div>
     <div class="avatar">
-    </div>
-    <div class="info">
-      <%= current_user.email %>
-
     </div>
   </div>
   <div class="rightborder">
-    <% @articles.each do |article| %>
-      <% if current_user.id == article.user_id %>
-        <div class="post">
-          <div class="title">
-            <table>
-              <tr>
-                <td width="560px">
-                  <%= article.title %>
-                </td>
-                <td align="right">
-                </td>
-              </tr>
-            </table>
-          </div>
-          <div class="content">
-            <%= article.content %>
-          </div>
-          <div class="links">
-            <%= article.created_at.strftime("%d %b %Y") %>, <%= article.created_at.strftime("%H:%M") %>
-            <%= link_to 'Show', article %>
-              <%= link_to 'Edit', edit_article_path(article) %>
-          </div>
-        </div>
-      <br/>
-      <% end %>
-    <% end %>
-    <h2><%= link_to 'New Article', new_article_path %></h2>
   </div>
   <div class="clear"></div>
+  <br/>
+  <div class="bord">
+    <hr>
+    <h1>Мои новости:</h1>
+    <hr>
+  </div>
+
+  <div class="profpost">
+    <% @articles.each do |article| %>
+      <% if current_user.id == article.user_id %>
+      <div class="post">
+        <div class="author">
+          <table>
+            <tr>
+              <td width="560px">
+                <%= article.user_name %>  <%=article.user_surname %>
+              </td>
+              <td align="right">
+                <% if current_user.id == article.user_id || current_user.id == 1  %>
+                  <%= link_to '×', article, method: :delete, data: { confirm: 'Are you sure?' } %>
+                <% else %>
+                    <span>×</span>
+                <% end %>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="title">
+          <%= article.title %>
+        </div>
+        <div class="content">
+          <%= article.content %>
+        </div>
+        <div class="links">
+          <%= article.created_at.strftime("%d %b %Y") %>, <%= article.created_at.strftime("%H:%M") %>
+          <%= link_to 'Show', article %>
+          <% if current_user.id == article.user_id %>
+            <%= link_to 'Edit', edit_article_path(article) %>
+          <% else %>
+            <span>Edit</span>
+          <% end %>
+          <hr>
+        </div>
+        <div class="comlab">Комментарии:</div>
+        <div class="comments">
+          <%= render article.comments %>
+          <hr>
+          <div class="com_url">
+            <%= link_to 'Comment', article %>
+          </div>
+          <div class="hr"><hr></div>
+        </div>
+        <br /><br />
+</div>
+<% end %>
+<% end %>
+<br>
+  </div>
 <div class="center hero-unit">
 </div>

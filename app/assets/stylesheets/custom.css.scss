@@ -296,7 +296,7 @@ footer ul li {
 
 .textArea{
   width: 580px;
-  height: 150px;
+  height: 70px;
   padding: 10px;
   font-family: Arial;
   font-size: 1.3em;
@@ -338,12 +338,13 @@ footer ul li {
   margin-top: 30px;
   margin-left: 350px;
 }
+
 .fullname{
   margin-left: 110px;
-  width:260px;
+  width:200px;
   font-weight: bold;
   font-family: Arial;
-  font-size: 1.3em;
+  font-size: 1.2em;
   padding: 10px;
   background: #FCFDCC;
   border: 1px solid #dfd7ca;
@@ -355,8 +356,8 @@ footer ul li {
 .avatar{
   margin-left: 110px;
   margin-top:-1px;
-  width: 260px;
-  height: 260px;
+  width: 200px;
+  height: 200px;
   padding: 10px;
   border: 1px solid #dfd7ca;
   -webkit-background-clip: padding-box;
@@ -463,9 +464,19 @@ footer ul li {
   color: #dfd7ca;
   text-decoration: none;
 }
+
+.comment_autor span{
+  font-size: 1.0em;
+  color: #dfd7ca;
+}
 .comment_autor a:hover{
   text-decoration: none;
   color: red;
+}
+.comment_data{
+  margin-top: 9px;
+  font-family: Arial;
+  font-size: 0.8em;
 }
 .com_url{
   text-align: center;
@@ -500,4 +511,14 @@ footer ul li {
   background: #FAFAEB;
   -webkit-background-clip: padding-box;
           background-clip: padding-box;
+}
+
+.profpost{
+  margin-top:60px;
+}
+
+.bord{
+  margin: 0 auto;
+  width: 920px;
+  background: #FAFAEB;
 }

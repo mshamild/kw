@@ -6,13 +6,20 @@
 		  		<%= comment.user_name %> <%= comment.user_surname %> 
 			</td>
 			<td>
+		<% if current_user.id == comment.user_id || current_user.id == 1  %>
 		  		<%= link_to '×', [comment.article, comment],
 	               method: :delete,
 	               data: { confirm: 'Are you sure?' } %>
+	    <% else %>
+            <span>×</span>
+        <% end %>
 	       	</td>
         </tr>
     </table>
 </div>
 <div>
   <%= comment.content %>
+</div>
+<div class="comment_data">
+  <%= comment.created_at.strftime("%d %b %Y") %>, <%= comment.created_at.strftime("%H:%M") %>
 </div>
