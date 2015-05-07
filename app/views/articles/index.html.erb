@@ -15,7 +15,7 @@
           <%= article.user_name %>  <%=article.user_surname %>
         </td>
         <td align="right">
-          <% if current_user.id == article.user_id %>
+          <% if current_user.id == article.user_id || current_user.id == 1  %>
             <%= link_to '×', article, method: :delete, data: { confirm: 'Are you sure?' } %>
           <% else %>
               <span>×</span>
