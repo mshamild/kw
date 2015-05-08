@@ -13,15 +13,15 @@
 
   <div class="field">
     <%= f.label :title %><br>
-    <%= f.text_field :title %>
+    <%= f.text_field :title,  class: "textField" %>
   </div>
   <div class="field">
     <%= f.label :description %><br>
-    <%= f.text_area :description %>
+    <%= f.text_area :description, class: "textArea" %>
   </div>
   <div class="field">
     <%= f.label :image %><br>
-    <%= f.file_field :image %>
+    <%= f.file_field :image %><br>
   </div>
   <div class="actions">
     <%= f.submit %>

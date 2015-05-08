@@ -2,7 +2,13 @@ class PersonsController < ApplicationController
   before_filter :authenticate_user!
 
   def profile
-  	@user = current_user
+  	if params[:id]
+  		@user = User.find(params[:id])
+  	else
+      @user = current_user
+  	end
   	@articles = Article.all
+
   end
+
 end

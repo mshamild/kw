@@ -35,14 +35,14 @@
     <% if current_user.id == @user.id %>
       <h1>My news:</h1>
     <% else %>
-      <h1><%= @user.id %> news:</h1>
+      <h1><%= @user.name %> news:</h1>
     <% end %>
     <hr>
   </div>
 
   <div class="profpost">
     <% @articles.each do |article| %>
-      <% if current_user.id == article.user_id %>
+      <% if @user.id == article.user_id %>
       <div class="post">
         <div class="author">
           <table>
