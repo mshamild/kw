@@ -3,12 +3,40 @@
     </div>
   </div>
   <div class="rightborder">
+    <table class="infotable">
+      <tbody>
+        <tr>
+          <td><span>Full Name:</span> </td>
+          <td><%= @user.name %> <%= @user.surname %></td>
+        </tr>
+        <tr>
+          <td> <span>Age:</span> </td>
+          <td><%= @user.age %></td>
+        </tr>
+        <tr>
+          <td> <span>E-mail:</span> </td>
+          <td><%= @user.email %></td>
+        </tr>
+        <tr>
+          <td> <span>Mobile:</span> </td>
+          <td><%= @user.mobile %></td>
+        </tr>
+        <tr>
+          <td> <span>VK:</span> </td>
+          <td><%= @user.vkpage %></td>
+        </tr>
+      </tbody>
+    </table> 
   </div>
   <div class="clear"></div>
   <br/>
   <div class="bord">
     <hr>
-    <h1>Мои новости:</h1>
+    <% if current_user.id == @user.id %>
+      <h1>My news:</h1>
+    <% else %>
+      <h1><%= @user.id %> news:</h1>
+    <% end %>
     <hr>
   </div>
 

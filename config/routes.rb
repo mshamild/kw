@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   end
 
   devise_for :users
+  # get 'persons/profile'
   match '/profile',    to: 'persons#profile',    via: 'get', as: 'user_root'
 
   root 'static_pages#home'

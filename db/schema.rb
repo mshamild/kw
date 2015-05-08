@@ -51,6 +51,9 @@ ActiveRecord::Schema.define(version: 20150506075939) do
     t.string   "surname",                default: "", null: false
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
+    t.integer  "age"
+    t.string   "vkpage"
+    t.string   "mobile"
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
